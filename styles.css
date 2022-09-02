@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); 
+
+* {
+  box-sizing: border-box;
+}
+
+body { /*Задаем стиль для страницы body*/
+  font-family: 'Muli', sans-serif;
+  overflow: hidden;
+  margin: 0;
+  background: #111; /*Задаем черный цвет*/
+  height: 100vh; /*наш body занимает 100% простраства на странице*/
+  display: flex; /*Выровнять корректно слайды*/
+  justify-content: center; /*Выровнять элементы по центру страницы*/
+  align-items: center; /*Выровнять элементы по центру страницы*/
+}
+
+.container { /*Задаем стиль для наших элементов (фотокарточек)*/
+  width: 100%;
+  display: flex;
+  padding: 0 20px; /*Отступ сверху снизу 0, слева справа 20 пикселей*/
+}
+
+.slide { /*Задаем стиль для класса slide*/
+  height: 80vh; /*Высота*/
+  border-radius: 20px; /*Задаем закругления*/
+  margin: 10px; /*Задаем отступ между слайдами*/
+  cursor: pointer; /*Задаем при наводке на слайды смену курсора*/
+  color: #fff; /*Задаем белый цвет для текста*/
+  flex: 1; /*Коэфициент заполнения слайда на странице - линейный*/
+  background-size: cover; /*Задаем размер позиционирования картинки*/
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; /*Приклеем текст к слайдам*/
+  transition: all 500ms ease-in-out; /*Задаем анимирование всех свойств all функцией ease-in-out*/
+}
+
+.slide h3 { /*Задаем стиль тега h3 - текста*/
+  position: absolute;
+  font-size: 24px; /*Задаем размер текста*/
+  bottom: 20px; /*Задаем отступ вниз*/
+  left: 20px; /*Задаем отступ влево*/
+  margin: 0; /*Убираем дефолтные отступы*/
+  opacity: 0; /*Задаем невидимость текста*/
+}
+
+.slide.active { /*Для активных слайдов*/
+  flex: 10; /*Задаем увеличение в 10р для активных слайдов*/
+}
+
+.slide.active h3 { /*Задаем стиль тега h3 - текста для активных слайдов*/
+  opacity: 1; /*Задаем видимость текста*/
+  transition: opacity 0.3s ease-in 0.4s; /*Задаем анимацию через свойство невидимости функцией ease-in*/
+
+}
